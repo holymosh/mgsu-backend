@@ -1,7 +1,8 @@
-﻿using System;
-using System.IO;
-//using ImageSharp;
+﻿using System.IO;
+using SixLabors.ImageSharp;
 using Microsoft.Extensions.Options;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.Primitives;
 
 namespace FileManagment
 {
@@ -9,30 +10,27 @@ namespace FileManagment
     {
         public FileInfo ResizeImageByLengthOfLongestSide(FileInfo imageToResizeInfo)
         {
-            //var image = Image.Load(File.ReadAllBytes(imageToResizeInfo.FullName));
-            //var newSize = new Size
-            //{
-            //    Width = image.Width > image.Height ? _fileStorageSettings.MaxImageSize : 0,
-            //    Height = image.Width > image.Height ? 0 : _fileStorageSettings.MaxImageSize
-            //};
+            var image = Image.Load(File.ReadAllBytes(imageToResizeInfo.FullName));
+            var newSize = new Size
+            {
+                Width = image.Width > image.Height ? _fileStorageSettings.MaxImageSize : 0,
+                Height = image.Width > image.Height ? 0 : _fileStorageSettings.MaxImageSize
+            };
 
-            //image.Resize(new ImageSharp.Processing.ResizeOptions
-            //{
-            //    Size = newSize,
-            //    Mode = ImageSharp.Processing.ResizeMode.Pad
-            //});
+            image.Mutate(i =>
+                i.Resize(new ResizeOptions
+                {
+                    Size = newSize,
+                    Mode = ResizeMode.Pad
+                }));
 
-            //var extension = Path.GetExtension(imageToResizeInfo.ToString());
-            //var newFileName = Path.GetRandomFileName();
-            //var fullPath = Path.Combine(_fileStorageSettings.ImageStorageFolder, newFileName) + $".{extension}";
+            var extension = Path.GetExtension(imageToResizeInfo.ToString());
+            var newFileName = Path.GetRandomFileName();
+            var fullPath = Path.Combine(_fileStorageSettings.ImageStorageFolder, newFileName) + $".{extension}";
 
-            //using (var fileStream = new FileStream(fullPath, FileMode.CreateNew, FileAccess.Write))
-            //{
-            //    image.Save(fileStream);
-            //}
+            image.Save(fullPath);
 
-            //return new FileInfo(fullPath);
-            throw new NotImplementedException();
+            return new FileInfo(fullPath);
         }
 
         private readonly FileStorageSettings _fileStorageSettings;

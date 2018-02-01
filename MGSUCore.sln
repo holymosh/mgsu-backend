@@ -1,27 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGSUCore", "MGSUCore\MGSUCore.csproj", "{8AF0575E-970B-4568-967F-DD510EA80FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGSUCore", "MGSUCore\MGSUCore.csproj", "{8AF0575E-970B-4568-967F-DD510EA80FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{3CA94F0D-3A9C-4781-AD85-75053B45BCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{3CA94F0D-3A9C-4781-AD85-75053B45BCF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{9682FE3C-58E7-4D31-881C-DC607E7E7394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{9682FE3C-58E7-4D31-881C-DC607E7E7394}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1B490C75-CBEB-41E8-9CD0-9EF2A257622C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagment", "Domain\UserManagment\UserManagment.csproj", "{56087A87-9323-446C-96E3-CE3E8F98B0B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagment", "Domain\UserManagment\UserManagment.csproj", "{56087A87-9323-446C-96E3-CE3E8F98B0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagment", "Domain\FileManagment\FileManagment.csproj", "{6A4D7A42-EEB6-4C50-83B6-E1B53667A21C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManagment", "Domain\FileManagment\FileManagment.csproj", "{6A4D7A42-EEB6-4C50-83B6-E1B53667A21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationManagment", "Domain\DonationManagment\DonationManagment.csproj", "{7166E6E6-F079-4044-86DB-D9E54B40E141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DonationManagment", "Domain\DonationManagment\DonationManagment.csproj", "{7166E6E6-F079-4044-86DB-D9E54B40E141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostManagment", "Domain\PostManagment\PostManagment.csproj", "{1B8A708A-1D2F-42E3-B349-1EEA5686A19B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostManagment", "Domain\PostManagment\PostManagment.csproj", "{1B8A708A-1D2F-42E3-B349-1EEA5686A19B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagment", "Domain\ProjectManagment\ProjectManagment.csproj", "{29BF8337-A65D-41E7-A3FB-44A444C9CEF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagment", "Domain\ProjectManagment\ProjectManagment.csproj", "{29BF8337-A65D-41E7-A3FB-44A444C9CEF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagment", "Domain\EventManagment\EventManagment.csproj", "{B6D27F52-7D71-4B4D-B183-41DCF4E93CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagment", "Domain\EventManagment\EventManagment.csproj", "{B6D27F52-7D71-4B4D-B183-41DCF4E93CED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,5 +76,8 @@ Global
 		{1B8A708A-1D2F-42E3-B349-1EEA5686A19B} = {1B490C75-CBEB-41E8-9CD0-9EF2A257622C}
 		{29BF8337-A65D-41E7-A3FB-44A444C9CEF7} = {1B490C75-CBEB-41E8-9CD0-9EF2A257622C}
 		{B6D27F52-7D71-4B4D-B183-41DCF4E93CED} = {1B490C75-CBEB-41E8-9CD0-9EF2A257622C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0C64D8D-6C9B-4ACF-AAA3-0000EE62B384}
 	EndGlobalSection
 EndGlobal
