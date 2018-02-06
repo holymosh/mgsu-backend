@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Common.Entities;
 using EventManagment;
@@ -26,7 +27,7 @@ namespace MGSUCore.Controllers
         }
 
         [HttpGet("{year}/{month}")]
-        [Authorize("User")]
+        //[Authorize("User")]
         public IActionResult GetEventsByYearAndMonth(int year, int month)
         {
             if (!ModelState.IsValid)
@@ -47,6 +48,28 @@ namespace MGSUCore.Controllers
                             post.Date < beginOfNextMonth);
 
             return Ok(eventsToReturn.Select(EventMapper.EventToEventModel));
+        }
+
+        [HttpGet]
+        [Route("example")]
+        public IActionResult GetExampleEventModel()
+        {
+            var eventModelExample = new EventModel()
+            {
+                Content = "content",
+                CreatingDate =  DateTime.Now,
+                Date = DateTimeOffset.Now,
+                Description = "descr",
+                Id = ObjectId.GenerateNewId(),
+                Img = new ImageModel()
+                {
+                    Original = "reference",
+                    Role = "admin",
+                    Small = "reference"
+                },
+                Title = "title"
+            };
+            return Ok(new []{eventModelExample,eventModelExample});
         }
 
         [HttpPost("attend/{eventIdString}")]
