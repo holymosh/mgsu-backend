@@ -32,7 +32,7 @@ namespace ProjectManagment
 
             _projectRepository.Delete(projectIdToDelete);
         }
-
+        
         public Project FindFundProject()
         {
             return _projectRepository.GetByPredicate(project => project.Direction == "fund").Single();

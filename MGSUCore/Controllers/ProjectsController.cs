@@ -33,11 +33,8 @@ namespace MGSUCore.Controllers
                     projectsToReturn = _projectManager.GetProjectByPredicate();
                     return Ok(projectsToReturn.Select(ProjectMapper.ProjectToProjectModel));
                 }
-                else
-                {
-                    projectsToReturn = _projectManager.GetProjectByPredicate(project => project.Public);
-                    return Ok(projectsToReturn.Select(ProjectMapper.ProjectToProjectModel));
-                }
+                projectsToReturn = _projectManager.GetProjectByPredicate(project => project.Public);
+                return Ok(projectsToReturn.Select(ProjectMapper.ProjectToProjectModel));
             }
 
             if (value.Count > 1)
@@ -49,6 +46,13 @@ namespace MGSUCore.Controllers
 
             projectsToReturn = _projectManager.GetProjectByPredicate(project => project.Direction == direction);
             return Ok(projectsToReturn.Select(ProjectMapper.ProjectToProjectModel));
+        }
+
+        [HttpGet]
+        [Route("hundred")]
+        public IActionResult GetHundredYearsProject()
+        {
+            return Ok(_projectManager.GetProjectByPredicate(project => project.Direction.Equals("hundred")).First());
         }
 
         // GET api/values/5

@@ -17,7 +17,5 @@ namespace ProjectManagment.Application
         void UpdateProject(Project projectToUpdate);
         void DeleteProject(ObjectId projectIdToDelete);
 
-
-        Project FindFundProject();
     }
 }

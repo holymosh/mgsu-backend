@@ -90,7 +90,7 @@ namespace MGSUCore
             //});
             app.UseAuthentication();
             //CORS
-            app.UseCors(builder => builder.WithOrigins("http://efund-mgsu.ru",
+            app.UseCors(builder => builder.WithOrigins("http://efund-mgsu.ru:5000",
                 "http://185.204.0.35:5001",
                 "http://localhost:3000").AllowAnyMethod().AllowCredentials().AllowAnyHeader());
             app.UseForwardedHeaders(new ForwardedHeadersOptions

@@ -51,7 +51,7 @@ namespace MGSUCore
             _services.Configure<FileStorageSettings>(options => _configuration.GetSection("FileStorageSettings")
                 .Bind(options));
 
-            var sessionProvider = new SessionProvider(_configuration["ConnectionStrings:Mongo"],new EntityMapper());
+            var sessionProvider = new SessionProvider(_configuration["ConnectionStrings:Mongo"]);
             _services.AddSingleton<ISessionProvider, SessionProvider>(
                 (arg) => sessionProvider);
             //await DataConstraintsProvider.CreateConstraints(sessionProvider);
