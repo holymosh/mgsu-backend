@@ -79,19 +79,10 @@ namespace MGSUCore
             loggerFactory.AddDebug();
 
 
-            ////todo: use cookie auth middleware
-            //app.UseCookieAuthentication(new CookieAuthenticationOptions
-            //{
-            //    AuthenticationScheme = "WebCookieAuthMiddleware",
-            //    //todo: remove magic 302 bug
-            //    LoginPath = PathString.Empty,
-            //    AutomaticAuthenticate = true,
-            //    AutomaticChallenge = true
-            //});
             app.UseAuthentication();
             //CORS
-            app.UseCors(builder => builder.WithOrigins("http://efund-mgsu.ru:5000",
-                "http://185.204.0.35:5001",
+            app.UseCors(builder => builder.WithOrigins("http://efund-mgsu.ru",
+                "http://185.204.0.35:1488",
                 "http://localhost:3000").AllowAnyMethod().AllowCredentials().AllowAnyHeader());
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
