@@ -1,10 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using MGSUCore.Controllers.Extentions;
 using MGSUCore.Models.Convertors;
 using MongoDB.Bson;
 using Newtonsoft.Json;
-using BsonDateTime = MongoDB.Bson.BsonDateTime;
 
 namespace MGSUCore.Models
 {

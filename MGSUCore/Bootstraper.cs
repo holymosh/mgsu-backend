@@ -14,6 +14,7 @@ using DonationManagment;
 using Common;
 using EventManagment;
 using MGSUCore.Authentification.Handlers;
+using PartnershipManagment;
 
 namespace MGSUCore
 {
@@ -41,6 +42,7 @@ namespace MGSUCore
                 .AddSingleton<IImageResizer, ImageResizer>()
                 .AddSingleton<IAttendanceManager, AttendanceManager>()
                 .AddSingleton<IEventManager, EventManager>()
+                .AddSingleton<IPartnershipManager,PartnershsipManager>()
 
                 //Register auth middleware
                 .AddSingleton<IAuthorizationHandler, IsAuthentificatedAuthHandler>()
